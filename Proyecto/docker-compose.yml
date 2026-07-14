@@ -1,0 +1,58 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # Base de datos
+  db:
+    build: ./database
+    container_name: robotica_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - robotica_network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=robotica_db
+    restart: unless-stopped
+
+  # Backend API
+  backend:
+    build: ./backend
+    container_name: robotica_backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - robotica_network
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=robotica_db
+      - DB_USER=admin
+      - DB_PASSWORD=admin123
+    restart: unless-stopped
+
+  # Frontend
+  frontend:
+    build: ./frontend
+    container_name: robotica_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - robotica_network
+    restart: unless-stopped
+
+# Volúmenes para persistencia de datos
+volumes:
+  db_data:
+    driver: local
+
+# Redes Docker
+networks:
+  robotica_network:
+    driver: bridge
