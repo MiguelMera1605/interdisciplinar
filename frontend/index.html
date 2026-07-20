@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Placer o Felicidad? · Proyecto de Robótica</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand">Placer o Felicidad</a>
+      <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="mainNav">
+        <ul class="nav-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#materiales">Materiales</a></li>
+          <li><a href="#funcionamiento">Funcionamiento</a></li>
+          <li><a href="#aplicaciones">Aplicaciones</a></li>
+          <li><a href="#mantenimiento">Mantenimiento</a></li>
+          <li><a href="#seguridad">Seguridad</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#interaccion">Interacción</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle">Modo oscuro</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Proyecto de Robótica</span>
+          <h1>¿Placer o Felicidad?</h1>
+          <p>Explora un robot diseñado para mostrar cómo la tecnología puede generar sensaciones, utilidad y bienestar en un entorno real.</p>
+          <div class="hero-actions">
+            <a href="#sobre" class="button primary">Empezar</a>
+            <a href="#materiales" class="button secondary">Materiales</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/images/robot-hero.svg" alt="Robot del proyecto" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sobre el Proyecto</h2>
+          <p>Este proyecto de robótica usa sensores y actuadores para investigar si la experiencia tecnológica puede ser percibida como placer o felicidad. El robot está construido con componentes electrónicos accesibles y un diseño pensado para aplicaciones prácticas y educativas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="objetivos">
+      <div class="container grid-2">
+        <div>
+          <h2>Objetivos Generales</h2>
+          <ul>
+            <li>Desarrollar un robot que responda a estímulos ambientales.</li>
+            <li>Demostrar la integración entre hardware y software.</li>
+            <li>Crear una experiencia interactiva que conecte emoción y tecnología.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Objetivos Específicos</h2>
+          <ul>
+            <li>Implementar sensores de movimiento, luz y proximidad.</li>
+            <li>Construir un sistema de control con microcontrolador.</li>
+            <li>Registrar datos y mantener el robot seguro y funcional.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="materiales">
+      <div class="container">
+        <div class="section-header">
+          <h2>Materiales y Componentes</h2>
+          <p>Lista de elementos que se cargan dinámicamente desde la base de datos.</p>
+        </div>
+        <div class="materials-actions">
+          <input type="search" id="materialFilter" placeholder="Buscar componentes..." aria-label="Buscar materiales" />
+          <div id="materialsLoading" class="loading">Cargando materiales...</div>
+        </div>
+        <div id="materialsError" class="message message-error hidden"></div>
+        <div id="materialsGrid" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="funcionamiento">
+      <div class="container">
+        <div class="section-header">
+          <h2>Funcionamiento</h2>
+          <p>El robot funciona mediante ciclos de sensor-actuador donde detecta el entorno, procesa la información y responde con movimientos o señales luminosas.</p>
+        </div>
+        <ol class="steps-list">
+          <li><strong>Captura:</strong> Los sensores detectan luz, distancia y movimiento.</li>
+          <li><strong>Procesamiento:</strong> El microcontrolador evalúa los datos y decide la acción.</li>
+          <li><strong>Actuación:</strong> El robot mueve motores, enciende LEDs o envía alertas.</li>
+          <li><strong>Retroalimentación:</strong> El sistema ajusta su comportamiento según la respuesta.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="aplicaciones">
+      <div class="container">
+        <div class="section-header">
+          <h2>Características y Aplicaciones</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Interacción sensitiva</h3>
+              <p>Detecta el entorno y responde con luces o movimiento.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Aplicación educativa</h3>
+              <p>Sirve como herramienta para aprender robótica y electrónica.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Autonomía</h3>
+              <p>Gestión de ciclos de operación con respuesta automática.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Monitoreo</h3>
+              <p>Registra datos para análisis de uso y comportamiento.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="mantenimiento">
+      <div class="container">
+        <div class="section-header">
+          <h2>Mantenimiento Preventivo</h2>
+          <p>Mantén el robot operativo con buenas prácticas de limpieza y revisión periódica.</p>
+        </div>
+        <div class="maintenance-grid">
+          <article>
+            <h3>Limpieza</h3>
+            <p>Quita polvo con aire comprimido y limpia contactos con alcohol isopropílico.</p>
+          </article>
+          <article>
+            <h3>Verificación</h3>
+            <p>Revisa conexiones, tornillos y soldaduras para evitar fallos.</p>
+          </article>
+          <article>
+            <h3>Actualización</h3>
+            <p>Actualiza firmware y el software de control cuando sea necesario.</p>
+          </article>
+          <article>
+            <h3>Almacenaje</h3>
+            <p>Guarda el robot en un lugar seco y sin humedad para proteger sus componentes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="seguridad">
+      <div class="container">
+        <div class="section-header">
+          <h2>Normas de Seguridad</h2>
+          <div class="safety-grid">
+            <article>
+              <h3>ESD</h3>
+              <p>Usa pulsera antiestática y mantén componentes sensibles en superficies protegidas.</p>
+            </article>
+            <article>
+              <h3>Herramientas</h3>
+              <p>Utiliza destornilladores, alicates y soldadores adecuados y en buen estado.</p>
+            </article>
+            <article>
+              <h3>Alimentación</h3>
+              <p>Desconecta la alimentación antes de manipular circuitos y evita cortocircuitos.</p>
+            </article>
+            <article>
+              <h3>Protección</h3>
+              <p>Usa gafas y guantes siempre que trabajes con componentes eléctricos o mecánicos.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="galeria">
+      <div class="container">
+        <div class="section-header">
+          <h2>Galería de Fotos</h2>
+          <p>Imágenes del desarrollo y montaje del proyecto.</p>
+        </div>
+        <div class="gallery-wrapper">
+          <button class="gallery-nav" id="galleryPrev" aria-label="Imagen anterior">‹</button>
+          <div class="gallery-slide">
+            <img id="galleryImage" src="assets/images/gallery1.svg" alt="Vista del robot" />
+          </div>
+          <button class="gallery-nav" id="galleryNext" aria-label="Siguiente imagen">›</button>
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+    </section>
+
+    <section class="section" id="interaccion">
+      <div class="container grid-2">
+        <div>
+          <h2>Interacción</h2>
+          <p>Comparte tu opinión: ¿Este proyecto te genera placer o felicidad?</p>
+          <form id="feedbackForm" class="form-card" novalidate>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" />
+
+            <fieldset>
+              <legend>¿Este proyecto te genera?</legend>
+              <label><input type="radio" name="feeling" value="Placer" required /> Placer</label>
+              <label><input type="radio" name="feeling" value="Felicidad" /> Felicidad</label>
+              <label><input type="radio" name="feeling" value="Ambos" /> Ambos</label>
+            </fieldset>
+
+            <label for="comments">Comentarios</label>
+            <textarea id="comments" name="comments" rows="4" required placeholder="Cuéntanos tu opinión"></textarea>
+
+            <button type="submit" class="button primary">Enviar opinión</button>
+            <div id="formMessage" class="message hidden"></div>
+          </form>
+        </div>
+        <div>
+          <div class="callout-card">
+            <h3>¿Por qué es importante?</h3>
+            <p>El feedback ayuda a mejorar el proyecto, validar ideas y crear un producto más cercano a la experiencia humana y tecnológica.</p>
+          </div>
+          <div class="callout-card">
+            <h3>Validaciones</h3>
+            <p>Todos los campos son obligatorios y se verifica que el email sea válido antes de enviar al backend.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Equipo de Sitios Web · 2026 · Proyecto de Robótica</p>
+      <div class="footer-links">
+        <a href="#hero">Inicio</a>
+        <a href="#sobre">Proyecto</a>
+        <a href="#interaccion">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
