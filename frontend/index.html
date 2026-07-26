@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>¿Placer o Felicidad? · Proyecto de Robótica</title>
+  <title>Robot Autónomo de Evitación de Obstáculos · Proyecto de Robótica</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="brand">Placer o Felicidad</a>
+      <a href="#hero" class="brand">Robot Autónomo de Evitación</a>
       <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">
         <span></span>
         <span></span>
@@ -38,15 +38,15 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Proyecto de Robótica</span>
-          <h1>¿Placer o Felicidad?</h1>
-          <p>Explora un robot diseñado para mostrar cómo la tecnología puede generar sensaciones, utilidad y bienestar en un entorno real.</p>
+          <h1>Robot Autónomo de Evitación de Obstáculos</h1>
+          <p>Este robot móvil está diseñado para navegar de forma autónoma en entornos desconocidos, detectando y evitando obstáculos con un sensor ultrasónico HC-SR04.</p>
           <div class="hero-actions">
-            <a href="#sobre" class="button primary">Empezar</a>
-            <a href="#materiales" class="button secondary">Materiales</a>
+            <a href="#sobre" class="button primary">Ver descripción</a>
+            <a href="#galeria" class="button secondary">Ver galería</a>
           </div>
         </div>
         <div class="hero-media">
-          <img src="assets/images/robot-hero.svg" alt="Robot del proyecto" />
+          <img src="assets/images/robot-hero.svg" alt="Robot Autónomo de evitación de obstáculos" />
         </div>
       </div>
     </section>
@@ -54,8 +54,9 @@
     <section class="section" id="sobre">
       <div class="container">
         <div class="section-header">
-          <h2>Sobre el Proyecto</h2>
-          <p>Este proyecto de robótica usa sensores y actuadores para investigar si la experiencia tecnológica puede ser percibida como placer o felicidad. El robot está construido con componentes electrónicos accesibles y un diseño pensado para aplicaciones prácticas y educativas.</p>
+          <h2>Descripción del Proyecto</h2>
+          <p>Este proyecto consiste en un robot móvil diseñado para navegar de forma autónoma en entornos desconocidos, detectando y evitando obstáculos mediante sensores ultrasónicos. Es ideal para fines educativos, demostraciones de robótica básica y prototipado de sistemas de navegación autónoma.</p>
+          <p><em>Fotografía 1:</em> Vista frontal del robot mostrando el sensor ultrasónico y la estructura modular.</p>
         </div>
       </div>
     </section>
@@ -63,20 +64,60 @@
     <section class="section alt" id="objetivos">
       <div class="container grid-2">
         <div>
-          <h2>Objetivos Generales</h2>
+          <h2>Objetivos</h2>
           <ul>
-            <li>Desarrollar un robot que responda a estímulos ambientales.</li>
-            <li>Demostrar la integración entre hardware y software.</li>
-            <li>Crear una experiencia interactiva que conecte emoción y tecnología.</li>
+            <li>Desarrollar un sistema capaz de detectar obstáculos a una distancia de 2 cm a 400 cm.</li>
+            <li>Implementar algoritmos de control para cambios de dirección automáticos.</li>
+            <li>Fomentar el aprendizaje práctico de electrónica, programación y mecánica.</li>
+            <li>Validar la integración de componentes hardware y software en un sistema funcional.</li>
           </ul>
         </div>
         <div>
-          <h2>Objetivos Específicos</h2>
-          <ul>
-            <li>Implementar sensores de movimiento, luz y proximidad.</li>
-            <li>Construir un sistema de control con microcontrolador.</li>
-            <li>Registrar datos y mantener el robot seguro y funcional.</li>
-          </ul>
+          <h2>Flujo de operación</h2>
+          <ol>
+            <li>Detección: el sensor ultrasónico HC-SR04 emite pulsos y mide el tiempo de retorno para calcular la distancia.</li>
+            <li>Procesamiento: el Arduino Uno interpreta los datos y ejecuta el algoritmo de evitación.</li>
+            <li>Acción: el módulo L298N dirige los motores DC para ajustar dirección y velocidad.</li>
+            <li>Alimentación: baterías AA suministran energía al sistema, con 6V para motores y 5V regulado para el Arduino.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="funcionamiento">
+      <div class="container">
+        <div class="section-header">
+          <h2>Funcionamiento</h2>
+          <p>El robot opera mediante un ciclo continuo de detección, procesamiento y acción para evitar obstáculos en su camino.</p>
+        </div>
+        <ol class="steps-list">
+          <li><strong>Detección:</strong> el sensor HC-SR04 envía ultrasonido y mide el tiempo de retorno para estimar la distancia.</li>
+          <li><strong>Procesamiento:</strong> el Arduino Uno calcula la distancia y decide si debe cambiar de dirección.</li>
+          <li><strong>Acción:</strong> el módulo L298N controla los motores DC para girar o avanzar según la proximidad del obstáculo.</li>
+          <li><strong>Control:</strong> si la distancia es menor a 20 cm, el robot realiza un giro de aproximadamente 90° y continúa la búsqueda de ruta libre.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section alt" id="aplicaciones">
+      <div class="container">
+        <div class="section-header">
+          <h2>Aplicaciones</h2>
+          <p>Este robot sirve como plataforma para aprender conceptos de navegación autónoma y control de hardware.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Educativas</h3>
+            <p>Enseñanza de lógica de programación, electrónica y física en escuelas y universidades.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Prototipado</h3>
+            <p>Base para proyectos avanzados como robots de limpieza o exploración.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Demostraciones</h3>
+            <p>Exhibición en ferias de ciencia o talleres de robótica.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -85,7 +126,7 @@
       <div class="container">
         <div class="section-header">
           <h2>Materiales y Componentes</h2>
-          <p>Lista de elementos que se cargan dinámicamente desde la base de datos.</p>
+          <p>Componentes principales utilizados en el robot y su función dentro del sistema.</p>
         </div>
         <div class="materials-actions">
           <input type="search" id="materialFilter" placeholder="Buscar componentes..." aria-label="Buscar materiales" />
@@ -96,69 +137,34 @@
       </div>
     </section>
 
-    <section class="section alt" id="funcionamiento">
-      <div class="container">
-        <div class="section-header">
-          <h2>Funcionamiento</h2>
-          <p>El robot funciona mediante ciclos de sensor-actuador donde detecta el entorno, procesa la información y responde con movimientos o señales luminosas.</p>
-        </div>
-        <ol class="steps-list">
-          <li><strong>Captura:</strong> Los sensores detectan luz, distancia y movimiento.</li>
-          <li><strong>Procesamiento:</strong> El microcontrolador evalúa los datos y decide la acción.</li>
-          <li><strong>Actuación:</strong> El robot mueve motores, enciende LEDs o envía alertas.</li>
-          <li><strong>Retroalimentación:</strong> El sistema ajusta su comportamiento según la respuesta.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section" id="aplicaciones">
-      <div class="container">
-        <div class="section-header">
-          <h2>Características y Aplicaciones</h2>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Interacción sensitiva</h3>
-              <p>Detecta el entorno y responde con luces o movimiento.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Aplicación educativa</h3>
-              <p>Sirve como herramienta para aprender robótica y electrónica.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Autonomía</h3>
-              <p>Gestión de ciclos de operación con respuesta automática.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Monitoreo</h3>
-              <p>Registra datos para análisis de uso y comportamiento.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section alt" id="mantenimiento">
       <div class="container">
         <div class="section-header">
           <h2>Mantenimiento Preventivo</h2>
-          <p>Mantén el robot operativo con buenas prácticas de limpieza y revisión periódica.</p>
+          <p>Recomendaciones para mantener el robot en condiciones de operación seguras y confiables.</p>
         </div>
         <div class="maintenance-grid">
           <article>
-            <h3>Limpieza</h3>
-            <p>Quita polvo con aire comprimido y limpia contactos con alcohol isopropílico.</p>
+            <h3>Verificación mensual</h3>
+            <ul>
+              <li>Revisar conexiones eléctricas para evitar cortocircuitos.</li>
+              <li>Limpiar el sensor ultrasónico con aire comprimido.</li>
+              <li>Calibrar el sensor ajustando el tiempo de respuesta en el código.</li>
+            </ul>
           </article>
           <article>
-            <h3>Verificación</h3>
-            <p>Revisa conexiones, tornillos y soldaduras para evitar fallos.</p>
+            <h3>Baterías</h3>
+            <ul>
+              <li>Reemplazar baterías cada 3 meses o al detectar disminución de velocidad.</li>
+              <li>Evitar descargas profundas y no dejar el robot sin carga prolongadamente.</li>
+            </ul>
           </article>
           <article>
-            <h3>Actualización</h3>
-            <p>Actualiza firmware y el software de control cuando sea necesario.</p>
-          </article>
-          <article>
-            <h3>Almacenaje</h3>
-            <p>Guarda el robot en un lugar seco y sin humedad para proteger sus componentes.</p>
+            <h3>Mecánica</h3>
+            <ul>
+              <li>Ajustar ruedas para garantizar alineación y reducir fricción.</li>
+              <li>Verificar sujetadores y chasis modular para mantener estabilidad.</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -168,42 +174,68 @@
       <div class="container">
         <div class="section-header">
           <h2>Normas de Seguridad</h2>
-          <div class="safety-grid">
-            <article>
-              <h3>ESD</h3>
-              <p>Usa pulsera antiestática y mantén componentes sensibles en superficies protegidas.</p>
-            </article>
-            <article>
-              <h3>Herramientas</h3>
-              <p>Utiliza destornilladores, alicates y soldadores adecuados y en buen estado.</p>
-            </article>
-            <article>
-              <h3>Alimentación</h3>
-              <p>Desconecta la alimentación antes de manipular circuitos y evita cortocircuitos.</p>
-            </article>
-            <article>
-              <h3>Protección</h3>
-              <p>Usa gafas y guantes siempre que trabajes con componentes eléctricos o mecánicos.</p>
-            </article>
-          </div>
+          <p>Precauciones clave para trabajar con el robot de evitación de obstáculos.</p>
+        </div>
+        <div class="safety-grid">
+          <article>
+            <h3>Manipulación</h3>
+            <p>Trabajar siempre con el sistema desconectado de la fuente de energía y usar guantes aislantes al manipular voltajes superiores a 5V.</p>
+          </article>
+          <article>
+            <h3>Prevención de cortocircuitos</h3>
+            <p>Verificar que los cables no estén desgastados y no conectar motores directamente al Arduino.</p>
+          </article>
+          <article>
+            <h3>Entorno de trabajo</h3>
+            <p>Mantener una superficie seca y libre de objetos metálicos, con buena iluminación.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="galeria">
+    <section class="section alt" id="recomendaciones">
+      <div class="container">
+        <div class="section-header">
+          <h2>Recomendaciones Técnicas</h2>
+          <p>Consejos para el cuidado de los componentes y el manejo seguro del robot.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Limpieza</h3>
+            <p>Usar aire comprimido para eliminar polvo y no aplicar líquidos directamente sobre circuitos.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Herramientas</h3>
+            <p>Multímetro, destornillador de precisión y pinzas de punta fina son esenciales.</p>
+          </article>
+          <article class="feature-card">
+            <h3>ESD</h3>
+            <p>Usar pulsera antiestática, trabajar sobre superficies protegidas y almacenar componentes en bolsas de aluminio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
       <div class="container">
         <div class="section-header">
           <h2>Galería de Fotos</h2>
-          <p>Imágenes del desarrollo y montaje del proyecto.</p>
+          <p>Imágenes del robot y su montaje. La primera imagen muestra la vista frontal del robot.</p>
         </div>
-        <div class="gallery-wrapper">
-          <button class="gallery-nav" id="galleryPrev" aria-label="Imagen anterior">‹</button>
-          <div class="gallery-slide">
-            <img id="galleryImage" src="assets/images/gallery1.svg" alt="Vista del robot" />
-          </div>
-          <button class="gallery-nav" id="galleryNext" aria-label="Siguiente imagen">›</button>
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <img src="assets/images/gallery1.jpeg" alt="Vista frontal del robot" />
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/gallery2.jpeg" alt="Vista lateral del robot" />
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/gallery3.jpeg" alt="Robot con circuito visible" />
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/gallery4.jpeg" alt="Placa con sensor ultrasónico" />
+          </figure>
         </div>
-        <div class="gallery-thumbs" id="galleryThumbs"></div>
       </div>
     </section>
 
@@ -236,7 +268,7 @@
         <div>
           <div class="callout-card">
             <h3>¿Por qué es importante?</h3>
-            <p>El feedback ayuda a mejorar el proyecto, validar ideas y crear un producto más cercano a la experiencia humana y tecnológica.</p>
+            <p>El feedback ayuda a mejorar el proyecto y a adaptar el diseño según las necesidades reales.</p>
           </div>
           <div class="callout-card">
             <h3>Validaciones</h3>

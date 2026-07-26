@@ -19,10 +19,10 @@ const elements = {
 let materialsData = [];
 let galleryIndex = 0;
 const galleryImages = [
-  "assets/images/gallery1.svg",
-  "assets/images/gallery2.svg",
-  "assets/images/gallery3.svg",
-  "assets/images/gallery4.svg",
+  "assets/images/gallery1.jpeg",
+  "assets/images/gallery2.jpeg",
+  "assets/images/gallery3.jpeg",
+  "assets/images/gallery4.jpeg",
 ];
 
 function toggleMenu() {
