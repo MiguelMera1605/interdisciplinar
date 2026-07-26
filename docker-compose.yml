@@ -14,28 +14,35 @@ services:
       - teamovictor-network
 
   backend:
-    image: node:20-alpine
-    working_dir: /app
-    volumes:
-      - ./backend:/app
-    command: sh -c "npm install && npm run dev"
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: robotica_backend
     ports:
       - "3000:3000"
     environment:
+      - DB_HOST=db
+      - DB_PORT=1433
+      - DB_NAME=proyectointerdisciplinar
+      - DB_USER=sa
+      - DB_PASSWORD=YourStrong!Passw0rd
       - PORT=3000
+    volumes:
+      - ./Base de Datos.sql:/app/init.sql:ro
+    depends_on:
+      - db
     networks:
       - teamovictor-network
 
   db:
-    image: postgres:16-alpine
+    image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: teamovictor
-    volumes:
-      - db_data:/var/lib/postgresql/data
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
     ports:
-      - "5432:5432"
+      - "1433:1433"
+    volumes:
+      - db_data:/var/opt/mssql
     networks:
       - teamovictor-network
 
